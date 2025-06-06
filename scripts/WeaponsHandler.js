@@ -346,11 +346,18 @@ export class WeaponsHandlerDND5e extends WeaponsHandler {
    * @param {Item} weapon
    * @returns {boolean}
    */
-  static isRanged(weapon) {
-    // See Giant Ape's rock for example of "None" range but still thrown.
-    return weapon.labels.range !== "None"
-      || weapon.system.range.long;
-  }
+static isRanged(weapon) {
+  const type = weapon.system.type.value;
+  const props = new Set(weapon.labels.properties);
+
+  // Ranged if explicitly ranged type
+  if (type === "simpleR" || type === "martialR") return true;
+
+  // Possibly ranged if it has long range AND is not also a melee type
+  if ((weapon.system.range?.long || weapon.system.range?.value) && !props.has("melee")) return true;
+
+  return false;
+}
 
   /**
    * Is this item a melee weapon?
