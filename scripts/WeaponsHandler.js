@@ -361,7 +361,7 @@ export class WeaponsHandlerDND5e extends WeaponsHandler {
   static isMelee(weapon) {
     // Daggers, etc. can be thrown or melee.
     return weapon.system.type.value === "simpleM"
-      || weapon.system.type === "martialM"
+      || weapon.system.type.value === "martialM"
       || !this.isRanged(weapon);
   }
 
