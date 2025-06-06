@@ -1,10 +1,10 @@
 {
   "name": "actioninitiative",
-  "minimumCoreVersion": "10",
   "id": "actioninitiative",
   "title": "Action Initiative",
-  "version": "#{VERSION}#",
+  "version": "1.0.1",
   "library": false,
+  "minimumCoreVersion": "10",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331"
@@ -37,9 +37,9 @@
       "description": "Initiative based on actions taken by the combatants."
     }
   ],
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#",
+  "url": "https://github.com/AlexanderMee/fvtt-action-initiative",
+  "manifest": "https://raw.githubusercontent.com/AlexanderMee/fvtt-action-initiative/main/module.json",
+  "download": "https://github.com/AlexanderMee/fvtt-action-initiative/archive/refs/heads/main.zip",
   "license": "LICENSE",
   "readme": "README.md"
 }
