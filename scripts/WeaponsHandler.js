@@ -259,6 +259,15 @@ export class WeaponsHandler {
       case MELEE: weapons = weapons.filter(w => this.constructor.isMelee(w)); break;
       case RANGED: weapons = weapons.filter(w => this.constructor.isRanged(w)); break;
     }
+  /* debug */
+  console.log("=== DEBUG Weapon Selection Dialog ===");
+  console.log("Attack Type:", attackType === 1 ? "MELEE" : "RANGED");
+  console.log("All weapons:", [...this.weapons].map(w => `${w.name} (${w.system.type?.value})`));
+  console.log("Equipped:", [...this.weapons].map(w => `${w.name}: ${this.isEquipped(w)}`));
+  console.log("Filtered Ranged:", [...this.weapons].filter(w => this.constructor.isRanged(w)).map(w => w.name));
+  console.log("Filtered Melee:", [...this.weapons].filter(w => this.constructor.isMelee(w)).map(w => w.name));
+  console.log("Final weapons passed in:", weapons.map(w => w.name));
+
     return CONFIG[MODULE_ID].WeaponSelectionDialog.create(weapons, { combatantNames, ...opts });
   }
 
