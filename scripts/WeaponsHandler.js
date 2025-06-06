@@ -353,9 +353,6 @@ static isRanged(weapon) {
   // Ranged if explicitly ranged type
   if (type === "simpleR" || type === "martialR") return true;
 
-  // Possibly ranged if it has long range AND is not also a melee type
-  if ((weapon.system.range?.long || weapon.system.range?.value) && !props.has("melee")) return true;
-
   return false;
 }
 
